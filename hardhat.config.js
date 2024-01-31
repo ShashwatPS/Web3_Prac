@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config()
 require("./tasks/block-number")
+require("hardhat-gas-reporter")
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
@@ -21,4 +22,9 @@ module.exports = {
         },
   },
   solidity: "0.8.8",
+  gasReporter: {
+      enabled: true,
+      outputFile: "gas-report.txt",
+      noColors: true,
+  }
 };
